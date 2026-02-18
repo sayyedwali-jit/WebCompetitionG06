@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio</title>
+<link rel="stylesheet" href="style.css">
+<script defer src="script.js"></script>
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #111;
+    padding: 15px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00adb5;
+}
+
+/* Home Banner */
+.home {
+    height: 100vh;
+    background: linear-gradient(to right, #00adb5, #393e46);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.banner h1 span {
+    color: yellow;
+}
+
+.banner button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background: #111;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.banner button:hover {
+    background: #00adb5;
+}
+
+/* Sections */
+.section {
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.section h2 {
+    margin-bottom: 20px;
+}
+
+/* Skills */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #00adb5;
+    padding: 30px;
+    color: white;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Projects */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: #f4f4f4;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.round-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+.project-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Contact */
+form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+form input, form textarea {
+    margin: 10px 0;
+    padding: 10px;
+}
+
+form button {
+    padding: 10px;
+    background: #00adb5;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+    .nav-links {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+    .nav-links li {
+        margin: 10px 0;
+    }
+}
+</style>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <div class="JIT-Logo.png">MyPortfolio</div>
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#developer">Developer</a></li>
+    </ul>
+</nav>
+
+<!-- Home Section -->
+<section id="home" class="home">
+    <div class="banner">
+        <image src="JIT-Logo.png"></image>
+        <h1>Hello, We are <span>Taqdees and Mahefuza</span></h1>
+        <p>Web Developer | Designer | Programmer</p>
+        <button onclick="scrollToSection('contact')">Hire Me</button>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="section">
+    <h2>About</h2>
+    <p>We are a passionate web developer with experience in building responsive websites using modern technologies.</p>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="section">
+    <h2>Our Skills</h2>
+    <image src="CoDept-Logo.png"></image>
+    <div class="skills-grid">
+        <div class="card">HTML</div>
+        <div class="card">CSS</div>
+        <div class="card">JavaScript</div>
+        <div class="card">React</div>
+        <div class="card">Python</div>
+        <div class="card">SQL</div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="section">
+    <h2>Our Projects</h2>
+    <div class="projects-grid">
+        <div class="project-card">
+            <img src="Java-Projects1.png" alt="Project 1">
+            <h3>Project One</h3>
+        </div>
+        <div class="project-card">
+            <img src="Java-Projects2.png" alt="Project 2">
+            <h3>Project Two</h3>
+        </div>
+        <div class="project-card">
+            <img src="java_binary3.jpg" alt="Project 3">
+            <h3>Project Three</h3>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="section">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name">
+        <input type="email" id="email" placeholder="Your Email">
+        <textarea id="message" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+        <p id="formMessage"></p>
+    </form>
+</section>
+
+<!-- Developer Section -->
+<section id="developer" class="section">
+    <h2>Developer Team</h2>
+
+    <div class="developer-grid">
+
+        <div class="developer-card">
+            <img src="TF.JPEG" alt="Taqdees Fatima" class="round-image">
+            <h3>Taqdees Fatima</h3>
+            <p>Diploma In Computer Engineering</p>
+            <p>Jamia Institute Of Technology</p>
+            <p>Email: taqdees896@gmail.com</p>
+        </div>
+
+        <div class="developer-card">
+            <img src="KM.JPEG" alt="Mahefuza Qureshi" class="round-image">
+            <h3>Mahefuza Qureshi</h3>
+            <p>Diploma In Computer Engineering</p>
+            <p>Jamia Institute Of Technology</p>
+            <p>Email: qureshimahefuza286@gmail.com</p>
+        </div>
+
+    </div>
+</section>
+<script>
+    function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+}
+
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let message = document.getElementById("message").value.trim();
+    let formMessage = document.getElementById("formMessage");
+
+    if (name === "" || email === "" || message === "") {
+        formMessage.style.color = "red";
+        formMessage.textContent = "All fields are required!";
+        return;
+    }
+
+    let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (!email.match(emailPattern)) {
+        formMessage.style.color = "red";
+        formMessage.textContent = "Enter a valid email address!";
+        return;
+    }
+
+    formMessage.style.color = "green";
+    formMessage.textContent = "Message sent successfully!";
+});
+</script>
+
+<footer>
+    <p>© 2026 MyPortfolio | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
